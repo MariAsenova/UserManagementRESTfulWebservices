@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import users.demo.model.DAO;
 import users.demo.model.User;
-import users.demo.model.UserDAO;
 
 import java.util.List;
 
