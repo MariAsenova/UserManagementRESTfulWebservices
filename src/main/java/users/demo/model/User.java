@@ -1,45 +1,29 @@
 package users.demo.model;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+//is a JPA annotation used to indicate that
+// the annotated class is a JPA entity class!
+// to make a table out of this class --> create an entity
+
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@Entity
 public class User {
+    // marks a field in a model class as a primary key
+    // primary key should be serial
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private  int id;
     private String name;
     private String email;
     private String password;
-
-    public User() {
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
